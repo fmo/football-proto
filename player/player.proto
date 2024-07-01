@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option go_package = "github.com/fmo/football-proto/player";
+
+message Player {
+  string team = 1;
+  int32 teamId = 2;
+  string name = 3;
+  string firstname = 4;
+  string lastname = 5;
+  int32 age = 6;
+  string nationality = 7;
+  string photo = 8;
+  string rapidApiId = 9;
+  int32 appearances = 10;
+  string position = 11;
+}
+
+service PlayerService {
+  rpc GetPlayer (PlayerRequest) returns (PlayerResponse);
+  rpc AddPlayer (Player) returns (PlayerResponse);
+}
+
+message PlayerRequest {
+  string rapidApiId = 1;
+}
+
+message PlayerResponse {
+  Player player = 1;
+}
