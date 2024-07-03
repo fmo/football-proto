@@ -15,16 +15,3 @@ message Player {
   int32 appearances = 10;
   string position = 11;
 }
-
-service PlayerService {
-  rpc GetPlayer (PlayerRequest) returns (PlayerResponse);
-  rpc AddPlayer (Player) returns (PlayerResponse);
-}
-
-message PlayerRequest {
-  string rapidApiId = 1;
-}
-
-message PlayerResponse {
-  Player player = 1;
-}
