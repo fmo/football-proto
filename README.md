@@ -12,3 +12,9 @@ protoc \
     --go-grpc_opt=paths=source_relative \
     ./player/player.proto
 ```
+
+# Tag
+
+git tag golang/player/v0.0.4
+
+git push origin golang/player/v0.0.4 
