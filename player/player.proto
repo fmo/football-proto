@@ -14,4 +14,5 @@ message Player {
   string rapidApiId = 9;
   int32 appearances = 10;
   string position = 11;
+  int32 transfermarktId = 12;
 }

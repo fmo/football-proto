@@ -25,17 +25,18 @@ type Player struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Team        string `protobuf:"bytes,1,opt,name=team,proto3" json:"team,omitempty"`
-	TeamId      int32  `protobuf:"varint,2,opt,name=teamId,proto3" json:"teamId,omitempty"`
-	Name        string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	Firstname   string `protobuf:"bytes,4,opt,name=firstname,proto3" json:"firstname,omitempty"`
-	Lastname    string `protobuf:"bytes,5,opt,name=lastname,proto3" json:"lastname,omitempty"`
-	Age         int32  `protobuf:"varint,6,opt,name=age,proto3" json:"age,omitempty"`
-	Nationality string `protobuf:"bytes,7,opt,name=nationality,proto3" json:"nationality,omitempty"`
-	Photo       string `protobuf:"bytes,8,opt,name=photo,proto3" json:"photo,omitempty"`
-	RapidApiId  string `protobuf:"bytes,9,opt,name=rapidApiId,proto3" json:"rapidApiId,omitempty"`
-	Appearances int32  `protobuf:"varint,10,opt,name=appearances,proto3" json:"appearances,omitempty"`
-	Position    string `protobuf:"bytes,11,opt,name=position,proto3" json:"position,omitempty"`
+	Team            string `protobuf:"bytes,1,opt,name=team,proto3" json:"team,omitempty"`
+	TeamId          int32  `protobuf:"varint,2,opt,name=teamId,proto3" json:"teamId,omitempty"`
+	Name            string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Firstname       string `protobuf:"bytes,4,opt,name=firstname,proto3" json:"firstname,omitempty"`
+	Lastname        string `protobuf:"bytes,5,opt,name=lastname,proto3" json:"lastname,omitempty"`
+	Age             int32  `protobuf:"varint,6,opt,name=age,proto3" json:"age,omitempty"`
+	Nationality     string `protobuf:"bytes,7,opt,name=nationality,proto3" json:"nationality,omitempty"`
+	Photo           string `protobuf:"bytes,8,opt,name=photo,proto3" json:"photo,omitempty"`
+	RapidApiId      string `protobuf:"bytes,9,opt,name=rapidApiId,proto3" json:"rapidApiId,omitempty"`
+	Appearances     int32  `protobuf:"varint,10,opt,name=appearances,proto3" json:"appearances,omitempty"`
+	Position        string `protobuf:"bytes,11,opt,name=position,proto3" json:"position,omitempty"`
+	TransfermarktId int32  `protobuf:"varint,12,opt,name=transfermarktId,proto3" json:"transfermarktId,omitempty"`
 }
 
 func (x *Player) Reset() {
@@ -147,105 +148,18 @@ func (x *Player) GetPosition() string {
 	return ""
 }
 
-type PlayerRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	RapidApiId string `protobuf:"bytes,1,opt,name=rapidApiId,proto3" json:"rapidApiId,omitempty"`
-}
-
-func (x *PlayerRequest) Reset() {
-	*x = PlayerRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_player_player_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *PlayerRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*PlayerRequest) ProtoMessage() {}
-
-func (x *PlayerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_player_player_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use PlayerRequest.ProtoReflect.Descriptor instead.
-func (*PlayerRequest) Descriptor() ([]byte, []int) {
-	return file_player_player_proto_rawDescGZIP(), []int{1}
-}
-
-func (x *PlayerRequest) GetRapidApiId() string {
+func (x *Player) GetTransfermarktId() int32 {
 	if x != nil {
-		return x.RapidApiId
+		return x.TransfermarktId
 	}
-	return ""
-}
-
-type PlayerResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Player *Player `protobuf:"bytes,1,opt,name=player,proto3" json:"player,omitempty"`
-}
-
-func (x *PlayerResponse) Reset() {
-	*x = PlayerResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_player_player_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *PlayerResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*PlayerResponse) ProtoMessage() {}
-
-func (x *PlayerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_player_player_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use PlayerResponse.ProtoReflect.Descriptor instead.
-func (*PlayerResponse) Descriptor() ([]byte, []int) {
-	return file_player_player_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *PlayerResponse) GetPlayer() *Player {
-	if x != nil {
-		return x.Player
-	}
-	return nil
+	return 0
 }
 
 var File_player_player_proto protoreflect.FileDescriptor
 
 var file_player_player_proto_rawDesc = []byte{
 	0x0a, 0x13, 0x70, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x2f, 0x70, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x2e,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xaa, 0x02, 0x0a, 0x06, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xd4, 0x02, 0x0a, 0x06, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72,
 	0x12, 0x12, 0x0a, 0x04, 0x74, 0x65, 0x61, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
 	0x74, 0x65, 0x61, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x74, 0x65, 0x61, 0x6d, 0x49, 0x64, 0x18, 0x02,
 	0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x74, 0x65, 0x61, 0x6d, 0x49, 0x64, 0x12, 0x12, 0x0a, 0x04,
@@ -264,19 +178,9 @@ var file_player_player_proto_rawDesc = []byte{
 	0x63, 0x65, 0x73, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0b, 0x61, 0x70, 0x70, 0x65, 0x61,
 	0x72, 0x61, 0x6e, 0x63, 0x65, 0x73, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x69,
 	0x6f, 0x6e, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x69,
-	0x6f, 0x6e, 0x22, 0x2f, 0x0a, 0x0d, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x12, 0x1e, 0x0a, 0x0a, 0x72, 0x61, 0x70, 0x69, 0x64, 0x41, 0x70, 0x69, 0x49,
-	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x72, 0x61, 0x70, 0x69, 0x64, 0x41, 0x70,
-	0x69, 0x49, 0x64, 0x22, 0x31, 0x0a, 0x0e, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1f, 0x0a, 0x06, 0x70, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x07, 0x2e, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x52, 0x06,
-	0x70, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x32, 0x64, 0x0a, 0x0d, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72,
-	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x2c, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x50, 0x6c,
-	0x61, 0x79, 0x65, 0x72, 0x12, 0x0e, 0x2e, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x0f, 0x2e, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x25, 0x0a, 0x09, 0x41, 0x64, 0x64, 0x50, 0x6c, 0x61, 0x79,
-	0x65, 0x72, 0x12, 0x07, 0x2e, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x1a, 0x0f, 0x2e, 0x50, 0x6c,
-	0x61, 0x79, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x26, 0x5a, 0x24,
+	0x6f, 0x6e, 0x12, 0x28, 0x0a, 0x0f, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65, 0x72, 0x6d, 0x61,
+	0x72, 0x6b, 0x74, 0x49, 0x64, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0f, 0x74, 0x72, 0x61,
+	0x6e, 0x73, 0x66, 0x65, 0x72, 0x6d, 0x61, 0x72, 0x6b, 0x74, 0x49, 0x64, 0x42, 0x26, 0x5a, 0x24,
 	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x66, 0x6d, 0x6f, 0x2f, 0x66,
 	0x6f, 0x6f, 0x74, 0x62, 0x61, 0x6c, 0x6c, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x6c,
 	0x61, 0x79, 0x65, 0x72, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
@@ -294,23 +198,16 @@ func file_player_player_proto_rawDescGZIP() []byte {
 	return file_player_player_proto_rawDescData
 }
 
-var file_player_player_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_player_player_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_player_player_proto_goTypes = []any{
-	(*Player)(nil),         // 0: Player
-	(*PlayerRequest)(nil),  // 1: PlayerRequest
-	(*PlayerResponse)(nil), // 2: PlayerResponse
+	(*Player)(nil), // 0: Player
 }
 var file_player_player_proto_depIdxs = []int32{
-	0, // 0: PlayerResponse.player:type_name -> Player
-	1, // 1: PlayerService.GetPlayer:input_type -> PlayerRequest
-	0, // 2: PlayerService.AddPlayer:input_type -> Player
-	2, // 3: PlayerService.GetPlayer:output_type -> PlayerResponse
-	2, // 4: PlayerService.AddPlayer:output_type -> PlayerResponse
-	3, // [3:5] is the sub-list for method output_type
-	1, // [1:3] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // [0:0] is the sub-list for method output_type
+	0, // [0:0] is the sub-list for method input_type
+	0, // [0:0] is the sub-list for extension type_name
+	0, // [0:0] is the sub-list for extension extendee
+	0, // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_player_player_proto_init() }
@@ -331,30 +228,6 @@ func file_player_player_proto_init() {
 				return nil
 			}
 		}
-		file_player_player_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*PlayerRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_player_player_proto_msgTypes[2].Exporter = func(v any, i int) any {
-			switch v := v.(*PlayerResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -362,9 +235,9 @@ func file_player_player_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_player_player_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   1,
 			NumExtensions: 0,
-			NumServices:   1,
+			NumServices:   0,
 		},
 		GoTypes:           file_player_player_proto_goTypes,
 		DependencyIndexes: file_player_player_proto_depIdxs,
