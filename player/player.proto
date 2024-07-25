@@ -15,4 +15,5 @@ message Player {
   int32 appearances = 10;
   string position = 11;
   string transfermarktId = 12;
+  string shirtNumber = 13;
 }
