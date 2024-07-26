@@ -5,7 +5,7 @@ player.proto: Definitions for player-related data and services.
 # Run the protoc
 
 ```
-protoc \                                    
+protoc \
     --go_out=./golang \
     --go_opt=paths=source_relative \
     --go-grpc_out=./golang \
