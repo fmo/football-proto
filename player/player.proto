@@ -16,4 +16,6 @@ message Player {
   string position = 11;
   string transfermarktId = 12;
   string shirtNumber = 13;
+  int32 marketValue = 14;
+  string marketValueCurrency = 15;
 }
