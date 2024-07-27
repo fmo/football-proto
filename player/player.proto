@@ -11,7 +11,7 @@ message Player {
   int32 age = 6;
   string nationality = 7;
   string photo = 8;
-  string rapidApiId = 9;
+  string apiFootballId = 9;
   int32 appearances = 10;
   string position = 11;
   string transfermarktId = 12;
